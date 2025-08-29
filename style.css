@@ -1,0 +1,323 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main container */
+.main-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(30, 42, 50, 0.08);
+  padding: 32px 24px;
+  margin: 32px 0;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1976d2;
+  letter-spacing: 0.5px;
+}
+
+h2, h3 {
+  color: #222;
+}
+
+/* Inputs */
+input[type="text"] {
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-bottom: 12px;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 8px 4px 0 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30, 42, 50, 0.08);
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:hover, button:focus {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+button.delete {
+  background: #e53935;
+}
+
+button.delete:hover {
+  background: #b71c1c;
+}
+
+button.success {
+  background: #43a047;
+}
+
+button.success:hover {
+  background: #2e7d32;
+}
+
+button.accent {
+  background: #ff9800;
+}
+
+button.accent:hover {
+  background: #f57c00;
+}
+
+/* Center the .app container perfectly */
+body {
+  /* ...existing code... */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+}
+
+/* Main app box styling */
+.app {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(30, 42, 50, 0.18);
+  padding: 40px 32px;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: appFadeIn 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+@keyframes appFadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-40px);}
+  to { opacity: 1; transform: scale(1) translateY(0);}
+}
+
+.app:hover {
+  box-shadow: 0 12px 40px rgba(30, 42, 50, 0.22);
+  transform: scale(1.02);
+}
+
+/* Headings inside app */
+.app h1, .app h2 {
+  text-align: center;
+  width: 100%;
+}
+
+/* Items list container */
+#items {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* Input field styling */
+#itemInput {
+  width: 85%;
+  padding: 12px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-bottom: 14px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-shadow: 0 2px 8px rgba(30, 42, 50, 0.06);
+  outline: none;
+  background: #f8fafc;
+}
+
+#itemInput:focus {
+  border-color: #1976d2;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.12);
+  background: #fff;
+  animation: inputPulse 0.4s;
+}
+
+@keyframes inputPulse {
+  0% { box-shadow: 0 0 0 0 rgba(25, 118, 210, 0.18);}
+  70% { box-shadow: 0 0 0 8px rgba(25, 118, 210, 0.08);}
+  100% { box-shadow: 0 4px 16px rgba(25, 118, 210, 0.12);}
+}
+
+/* Add Item button styling */
+.app button {
+  width: 85%;
+  display: block;
+  margin: 0 auto 10px auto;
+  background: linear-gradient(90deg, #1976d2 60%, #43a047 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 1.08em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30, 42, 50, 0.10);
+  transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.app button:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #388e3c 100%);
+  transform: scale(1.04);
+  box-shadow: 0 6px 18px rgba(25, 118, 210, 0.13);
+}
+
+.app button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+}
+
+.app button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(25, 118, 210, 0.08);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  z-index: 0;
+}
+
+.app button:active::after {
+  width: 120%;
+  height: 120%;
+}
+
+/* Card/List Items */
+.todo-item {
+  width: 100%;
+  background: #f5f7fa;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(30, 42, 50, 0.04);
+  animation: fadeIn 0.5s;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.todo-item:hover {
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.10);
+  transform: scale(1.02);
+}
+
+.todo-item p {
+  margin: 0;
+  font-size: 1em;
+  color: #222;
+}
+
+/* Delete button inside todo-item */
+.todo-item button {
+  width: auto;
+  background: #e53935;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.98em;
+  font-weight: 500;
+  margin-left: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(229, 57, 53, 0.10);
+  transition: background 0.18s, transform 0.15s;
+}
+
+.todo-item button:hover {
+  background: #b71c1c;
+  transform: scale(1.08);
+}
+
+.todo-item button:active {
+  transform: scale(0.96);
+}
+
+/* Responsive for app */
+@media (max-width: 600px) {
+  .app {
+    padding: 18px 8px;
+    margin: 18px 0;
+    max-width: 98vw;
+  }
+  #itemInput, .app button {
+    width: 98%;
+    font-size: 0.98em;
+    padding: 10px 0;
+  }
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 16px 0;
+  text-align: center;
+  color: #888;
+  font-size: 0.95em;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #1976d2;
+  color: #fff;
+  padding: 14px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(30, 42, 50, 0.08);
+}

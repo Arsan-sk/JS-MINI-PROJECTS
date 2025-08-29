@@ -9,6 +9,7 @@ function renderItems() {
 
     for (const [idx, item] of Object.entries(items)){
         const conatiner = document.createElement("div");
+        conatiner.className = "todo-item"; // <-- add class for styling
         conatiner.style.marginBottom = "10px";
         // conatiner.style.margin = "10px";
         
