@@ -36,6 +36,7 @@ body {
 /* Main app box styling */
 .app {
   display: flex;
+  flex-direction: column; /* Changed from row to column */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -119,11 +120,12 @@ body {
 /* Button group for stopwatch */
 .button-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Changed from row to column */
   gap: 18px;
-  justify-content: center; /* Ensure buttons are centered horizontally */
+  justify-content: center;
+  align-items: center; /* Center buttons vertically */
   width: 100%;
-  margin-top: 10px;
+  margin-top: 18px;
   margin-bottom: 0;
 }
 
@@ -151,8 +153,11 @@ button {
 
 button:hover, button:focus {
   background: #1565c0;
-  transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(25, 118, 210, 0.13);
+  transform: scale(1.10);
+  box-shadow: 0 8px 24px rgba(25, 118, 210, 0.18);
+  filter: brightness(1.08);
+  /* Add a slight outline for accessibility */
+  outline: 2px solid #43a047;
 }
 
 button:active {
@@ -197,9 +202,7 @@ button i {
     padding: 10px 0;
   }
 }
-    font-size: 2em;
-    margin-bottom: 18px;
-  }
+  
   .button-group {
     flex-direction: column;
     gap: 10px;

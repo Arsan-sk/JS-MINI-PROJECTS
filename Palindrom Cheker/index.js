@@ -6,6 +6,9 @@ function reverseString(str){
 }
 function Check(){
     val = input.value;
+    if (val === "") {
+        alert("Please enter text");
+        return;
     // alert(val)
     reverse_val = reverseString(val);
     // alert(reverse_val)
@@ -16,4 +19,4 @@ function Check(){
     }
 
     input.value = "";
-}
+}}

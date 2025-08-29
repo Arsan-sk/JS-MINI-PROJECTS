@@ -1,0 +1,248 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@700&display=swap');
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #22223b;
+  color: #f2e9e4;
+  font-family: 'Inter', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #4a4e69;
+  color: #f2e9e4;
+  padding: 16px 0;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  border-bottom: 4px solid #f67280;
+  box-shadow: 0 2px 8px #0004;
+}
+
+/* App container with retro pixel background pattern and extra padding */
+.app {
+  display: flex;
+  flex-direction: column; /* Ensure column layout */
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  width: 100vw;
+  padding: 32px 0;
+  /* background: repeating-linear-gradient(
+    135deg,
+    #22223b 0px,
+    #22223b 16px,
+    #4a4e69 16px,
+    #4a4e69 32px
+  ); */
+  /* Subtle pixel grid overlay */
+  position: relative;
+  gap: 24px;
+}
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='4' height='4' fill='%239a8c98'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+/* Quote card with white background and colored pixel border */
+.quote-box {
+  background: #fff;
+  border: 4px solid #f67280;
+  border-radius: 0;
+  box-shadow: 0 8px 32px #0008;
+  padding: 40px 32px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Ensure column layout for quote, author, buttons */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: fadeIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+  text-align: center;
+  z-index: 1;
+  transition: box-shadow 0.3s, border-color 0.3s, background 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-40px);}
+  to { opacity: 1; transform: scale(1) translateY(0);}
+}
+
+/* Quote text: classic serif font for intellectual quotes */
+#quote {
+  background: #fff;
+  color: #222;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Classic, elegant, widely used for quotes */
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 22px;
+  padding: 24px 18px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #22223b22, 0 2px 8px #0002;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  text-align: center;
+  display: inline-block;
+  min-width: 220px;
+  min-height: 48px;
+  border: 4px solid black;
+  overflow: hidden;
+  white-space: pre-wrap;
+  /* For JS: add .writing class for animation */
+}
+#quote.writing {
+  animation: typing 2s steps(30, end) 1;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Headings inside app */
+.app h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+  margin-bottom: 18px;
+  color: #f67280;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #222, 0 0 8px #f6728088;
+}
+
+/* Author text */
+#author {
+  font-size: 1em;
+  color: #c9ada7;
+  margin-bottom: 28px;
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #222;
+  animation: authorFadeIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes authorFadeIn {
+  0% { opacity: 0; transform: scale(0.96);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+/* Button group for quote actions */
+.button-group {
+  display: flex;
+  flex-direction: column; /* Changed from row to column */
+  gap: 18px;
+  justify-content: center;
+  align-items: center; /* Center buttons vertically */
+  width: 100%;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+/* Retro pixel buttons */
+button {
+  background: #f67280;
+  color: #fff;
+  border: 3px solid #22223b;
+  border-radius: 0;
+  padding: 14px 32px;
+  font-size: 1.08em;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #22223b, 0 4px 12px #0006;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.22s;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+}
+
+button:hover, button:focus {
+  background: #355c7d;
+  color: #f2e9e4;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 4px 4px 0 #22223b, 0 8px 24px #0008;
+}
+
+button:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 1px 1px 0 #22223b, 0 2px 8px #0004;
+  transition: transform 0.18s;
+}
+
+button i {
+  margin-right: 8px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 18px 0;
+  text-align: center;
+  color: #9a8c98;
+  font-size: 0.95em;
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
+  border-top: 3px solid #f67280;
+  background: #22223b;
+}
+
+/* Responsive for app */
+@media (max-width: 600px) {
+  .app {
+    padding: 8px 0;
+    min-height: 100vh;
+  }
+  .quote-box {
+    padding: 16px 6px;
+    margin-bottom: 18px;
+    max-width: 98vw;
+  }
+  #quote {
+    font-size: 1em;
+    margin-bottom: 16px;
+  }
+  #author {
+    font-size: 0.85em;
+    margin-bottom: 18px;
+  }
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  button {
+    width: 98%;
+    font-size: 0.92em;
+    padding: 10px 0;
+  }
+}
+
