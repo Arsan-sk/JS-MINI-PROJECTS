@@ -1,4 +1,5 @@
-let secondsElapsed = 60
+let secondsElapsed = 0
+let interval;
 const clock = document.getElementById("time")
 
 function paddString(value){
@@ -12,23 +13,23 @@ function Timer(){
 }
 
 function setTimer(){
-    const minutes =Math.floor(secondsElapsed / 60)
+    const minutes = Math.floor(secondsElapsed / 60)
     const seconds = secondsElapsed %  60
     clock.innerHTML = `${paddString(minutes)}:${paddString(seconds)}`
 }
-function startClock(){
+
+window._startClock = function startClock(){
     interval = setInterval(Timer, 1000) // call function after each 1000 ms or 1s
 }
 
-function stopClock(){
+window._stopClock = function stopClock(){
     if(interval){
         clearInterval(interval)
     }
 }
 
-
-function resetClock(){
-    stopClock()
+window._resetClock = function resetClock(){
+    window._stopClock()
     secondsElapsed = 0
     setTimer()
 

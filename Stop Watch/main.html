@@ -4,13 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop Watch</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Stop Watch</h1>
-    <h1 id="time">00:00</h1>
-    <button onclick="startClock()">Start</button>
-    <button onclick="stopClock()">Stop</button>
-    <button onclick="resetClock()">Clear</button>
-    <script src="index.js"></script>
+    <div class="app">
+        <div class="clock-box" id="clockBox">
+            <h1>Stop Watch</h1>
+            <h2 id="time">00:00</h2>
+            <div class="button-group">
+                <button id="startBtn" onclick="startClock()"><i class="fa-solid fa-play"></i>Start</button>
+                <button id="stopBtn" onclick="stopClock()"><i class="fa-solid fa-pause"></i>Stop</button>
+                <button id="resetBtn" onclick="resetClock()"><i class="fa-solid fa-rotate-left"></i>Clear</button>
+            </div>
+        </div>
+        <script src="index.js"></script>
+        <script>
+            // Animation toggle logic
+            let running = false;
+            function setRunningState(isRunning) {
+                const clockBox = document.getElementById('clockBox');
+                const time = document.getElementById('time');
+                if (isRunning) {
+                    clockBox.classList.add('running');
+                    time.classList.add('running');
+                } else {
+                    clockBox.classList.remove('running');
+                    time.classList.remove('running');
+                }
+            }
+            // Patch start/stop/reset to toggle animation
+            window.startClock = function() {
+                setRunningState(true);
+                if (window._startClock) return window._startClock();
+            }
+            window.stopClock = function() {
+                setRunningState(false);
+                if (window._stopClock) return window._stopClock();
+            }
+            window.resetClock = function() {
+                setRunningState(false);
+                if (window._resetClock) return window._resetClock();
+            }
+        </script>
+    </div>
 </body>
 </html>
