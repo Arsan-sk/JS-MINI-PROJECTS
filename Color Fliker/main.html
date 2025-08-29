@@ -32,15 +32,37 @@
             background-color: black;
             color: white;
         }
+        .box {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;    
+            width: 300px;
+            margin: 100px auto;     
+            background: linear-gradient(135deg, #f0f0f0, #ffffff);
+            border: 4px solid #ccc;
+            transition: background-color 0.5s ease;
+            /* height: 200px; */
+            margin-top: 200px;
+
+        }
     </style>
 </head>
 <body>
+    <div class="box">
     <h3>Web Page Color Flicker</h3>
     <button id="red" onclick="setColor('red')">Red</button>
     <button id="green" onclick="setColor('green')">Green</button>
     <button id="blue" onclick="setColor('blue')">Blue</button>
     <button id="random" onclick="setRandomColor()">Random</button>
-
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
